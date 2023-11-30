@@ -58,13 +58,16 @@
 
 
 
-    --step-0: clamp(1.125rem, 0.4728rem + 3.2609vw, 3rem);
-    --step-1: clamp(1rem, 0.7391rem + 1.3043vw, 1.75rem);
-
-
+    --step-0 : clamp(1.125rem, 0.4728rem + 3.2609vw, 3rem);
+    --step-1 : clamp(1rem, 0.7391rem + 1.3043vw, 1.75rem);
+    --step-2: clamp(1.125rem, 0.712rem + 2.0652vw, 2.3125rem);
+    --step-3: clamp(1.125rem, 0.8207rem + 1.5217vw, 2rem);
+    --bg-text: clamp(2.8125rem, -3.8179rem + 33.1522vw, 21.875rem);
+    --img-sizes: clamp(18.75rem, 8.5326rem + 51.087vw, 48.125rem);
 
 
     --space-s: clamp(6.25rem, 4.0761rem + 10.8696vw, 12.5rem);
+    --header-top-space: clamp(3.125rem, -1.2228rem + 21.7391vw, 15.625rem);
 
   }
 
@@ -172,10 +175,10 @@
     position: absolute;
     top: 95%;
     transform: translateY(-50%);
-    width: 2em;
+  
     z-index: 1;
     align-items: center;
-    width: 200px;
+    width: var(--space-s);
 }
 
 .splide__arrow.splide__arrow--next{
@@ -202,6 +205,11 @@ body{
   overflow-x: hidden;
 }
 
+
+nav{
+  padding: 30px;
+}
+
 .nav-link.active{
   color: black !important;
 }
@@ -221,10 +229,11 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .product img{
-  width: 770px;
+  width: var(--img-sizes);
   
   
 
@@ -232,18 +241,19 @@ main{
   
 .shoes-1{
     background-color: var(--color-red);
-    padding-top:250px;
+    padding-top:var(--header-top-space);
+    
 }
 
 .shoes-2{
   background-color: var(--color-pink);
-  padding-top:250px;
+  padding-top:var(--header-top-space);
 }
 
 
 .shoes-3{
   background-color: var(--color-blue);
-  padding-top:250px;
+  padding-top:var(--header-top-space);
 }
 
 
@@ -256,6 +266,8 @@ main{
 
   .logo_main img{
     width: var(--space-s);
+    height: 100px;
+    object-fit: cover;
   }
 
 
@@ -267,8 +279,8 @@ main{
 
 .for{
   position: absolute;
-  right: 5%;
-  top: 30%;
+  right: 11.5%;
+  top: 39%;
 
 }
 
@@ -309,7 +321,7 @@ line-height: 109.2%; /* 46.982px */
   color: #FFF;
 text-align: center;
 font-family: Teko;
-font-size: 37.5px;
+font-size: var(--step-2);
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -319,9 +331,48 @@ text-transform: uppercase;
 
 
 
+.bg-text{
+
+}
+
+.bg-text::before{
+  content: 'Wobat';
+  color: rgba(0, 0, 0, 0.10);
+    font-family: Teko;
+    font-size: var(--bg-text);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    position: absolute;
+    transform: translate(-12%);
+
+}
+
+
+.social-media{
+  position: absolute;
+    top: 50%;
+    left: 95%;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #333;
+  font-size: var(--step-3);
+}
 
 
 
+.fa.fa-star.checked{
+  color: yellow;
+}
 
 /* 
   ##Device = Desktops
@@ -345,7 +396,39 @@ text-transform: uppercase;
 	        animation: slide-right 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+.bg-text::before{
 
+  transform: translate(-7%);
   
   
+}
+
+@media  (max-width: 780px){
+  
+  .for {
+    position: absolute;
+    right: 11.5%;
+    
+}
+  .testimonal {
+  
+    top: 70%;
+    width: 17ch;
+}
+
+}
+
+@media  (max-width: 450px){
+  .bg-text::before {
+    font-size: 100px;
+    transform: translate(25px);
+    -webkit-transform: translate(25px);
+    -moz-transform: translate(25px);
+    -ms-transform: translate(25px);
+    -o-transform: translate(25px);
+}
+  
+.social-icons{
+  margin: -10px;
+}
 }
